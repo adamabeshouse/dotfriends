@@ -1,0 +1,7 @@
+#!/bin/sh
+while read line
+do
+	FRIEND=$(echo $line)
+	echo "$FRIEND" | grep --color=auto $FRIEND
+	f $FRIEND | grep -A 1 "Logged"
+done < "./.friends"
